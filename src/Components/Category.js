@@ -1,6 +1,6 @@
-function Category() {
-  function clickHandler(){
-    console.log()
+function Category(props) {
+  function clickHandler() {
+    console.log("hi");
   }
   const arr = [
     "all",
@@ -18,7 +18,13 @@ function Category() {
         {arr.map((category) => {
           return (
             <div>
-              <button  onClick={clickHandler}>{category}</button>
+              <button
+                onClick={() => {
+                  props.changeCategory(category);
+                }}
+              >
+                {category}
+              </button>
             </div>
           );
         })}
@@ -30,7 +36,9 @@ function Category() {
             }}
           >
             <input type="text" name="search"></input>
-            <button className="btn btn-primary" type="submit">Submit</button>
+            <button className="btn btn-primary" type="submit">
+              Submit
+            </button>
           </form>
         </div>
       </nav>
