@@ -1,4 +1,7 @@
 function Category() {
+  function clickHandler(){
+    console.log()
+  }
   const arr = [
     "all",
     "business",
@@ -15,7 +18,7 @@ function Category() {
         {arr.map((category) => {
           return (
             <div>
-              <button>{category}</button>
+              <button  onClick={clickHandler}>{category}</button>
             </div>
           );
         })}
@@ -27,7 +30,7 @@ function Category() {
             }}
           >
             <input type="text" name="search"></input>
-            <button type="submit">Submit</button>
+            <button className="btn btn-primary" type="submit">Submit</button>
           </form>
         </div>
       </nav>
